@@ -52,3 +52,6 @@ wp config create \
   --admin_email=$WORDPRESS_ADMIN_EMAIL\
   --path=/var/www/html \
   --allow-root  
+
+  # Modificamos el propietario y el grupo de /var/www/html
+  chown -R www-data:www-data /var/www/html
