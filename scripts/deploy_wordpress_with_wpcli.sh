@@ -52,6 +52,12 @@ wp config create \
   --admin_email=$WORDPRESS_ADMIN_EMAIL\
   --path=/var/www/html \
   --allow-root  
+# Configuramos el formato de los enlaces permanentes
+wp rewrite structure '/%postname%/' \
+  --path=/var/www/html \
+  --allow-root
 
+  # Copiamos el archivo .htaccess a /var/www/html
+cp ../htaccess/.htaccess /var/www/html
   # Modificamos el propietario y el grupo de /var/www/html
   chown -R www-data:www-data /var/www/html
